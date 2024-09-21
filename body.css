@@ -1,0 +1,121 @@
+body {
+  height: 100vh; /* Ensure the gradient covers the full viewport height */
+  margin: 0;
+  background: linear-gradient(135deg, #92c3e8 30%, #5098e6 100%);
+  font-family: sans-serif;
+}
+
+
+.info {
+  display: flex;
+  justify-content: center;
+}
+
+.GI, .CD {
+  width: 400px;
+  padding: 30px;
+  margin-top: 50px;
+}
+
+.GI {
+  background-color: white;
+  border-radius: 10px 0 0 10px;
+}
+
+.CD {
+  background-color: #3333CC;
+  border-radius: 0 10px 10px 0;
+}
+
+h3 {
+  margin-bottom: 20px;
+  color: #0066CC;
+  font-size: 20px;
+}
+
+.CD h3 {
+  color: white;
+}
+
+
+select, input {
+  width: 100%;
+  border: 0;
+  border-bottom: 1px solid grey;
+  font-size: 20px;
+  font-family: Arial;
+  background: transparent;
+  margin-bottom:20px;
+  
+}
+
+.GI input::placeholder,
+.GI option::placeholder {
+  color: black; 
+}
+
+.CD input::placeholder,
+.CD select::placeholder {
+  color: white; 
+}
+  
+  
+
+
+.name {
+  display: flex;
+  gap: 20px;
+  }
+
+.terms {
+  display: flex;
+  color: white;
+  margin-bottom: 20px;
+}
+
+.terms input[type="checkbox"] {
+  width: 20px;
+  height: 20px;
+  appearance: none;
+  border-radius: 50%; 
+  background-color: white;
+  cursor: pointer;
+  margin-right: 15px;
+  position: relative;
+}
+
+.terms input[type="checkbox"]:checked {
+  background-color: black;
+}
+
+
+.terms a {
+  color: white;
+  text-decoration: underline;
+}
+
+.submit {
+  text-align: center;
+}
+
+.submit button {
+  background-color: white;
+  color: #3333CC;
+  padding: 10px 20px;
+  border: 0;
+  border-radius: 20px;
+  cursor: pointer;
+}
+
+.submit button:hover {
+  background-color: #ccc;
+}
+.CD option{ 
+  background-color:black;
+  appearance:none;
+  border:none;
+}
+.CD select{
+  color:white;
+}
+

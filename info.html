@@ -2,116 +2,126 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Information</title>
-<link rel="stylesheet" href="body.css">
+  <link rel="stylesheet" href="body.css">
 </head>
 <body>
-  </head>
-<body>
   <div class="info">
-   
-    <div class="GI">
-      <h3>General Information</h3>
-      <form>
- 
+    <form id="registrationForm" class="registration-form">
+      <div class="GI">
+        <h3>General Information</h3>
         <div class="form">
-          <select>
+          <select id="title" name="title">
             <option value="" disabled selected>Title</option>
             <option value="mr">Mr.</option>
             <option value="ms">Ms.</option>
           </select>
+          <span id="title_error" class="error-message"></span>
         </div>
-       
+
         <div class="name">
           <div class="name-item">
             <input id="firstName" type="text" name="firstName" placeholder="First Name">
+            <span id="name_error" class="error-message"></span>
           </div>
           <div class="name-item">
             <input id="lastName" type="text" name="lastName" placeholder="Last Name">
+            <span id="last_name_error" class="error-message"></span>
           </div>
         </div>
-  
+
         <div class="position">
-          <select>
+          <select id="position" name="position">
             <option value="" disabled selected>Position</option>
             <option value="employee">Employee</option>
             <option value="senior-employee">Senior Employee</option>
           </select>
+          <span id="position_error" class="error-message"></span>
         </div>
-     
-        <div class="position">
-          <input type="text" name="company" placeholder="Company">
-        </div>
-       
-   <div class="name">
-  <div class="name-item">
-    <input type="text" name="business_arena" placeholder="Business Arena">
-  </div>
-  <div class="name-item">
-    <select>
-      <option value="" disabled selected>Employees</option>
-      <option value="1-10">1-10</option>
-      <option value="11-50">11-50</option>
-      <option value="51-200">51-200</option>
-    </select>
-  </div>
-</div>
-
-      
-        <div class="position">
-          <input type="text" name="employees" placeholder="Employees">
-        </div>
-      </form>
-    </div>
-    
-    <div class="CD">
-      <h3>Contact Details</h3>
-      <form>
 
         <div class="position">
-          <input type="text" name="street" placeholder="Street + Nr">
+          <input id="company" type="text" name="company" placeholder="Company">
+          <span id="company_error" class="error-message"></span>
         </div>
-        <div class="position">
-          <input type="text" name="additional_info" placeholder="Additional Information">
-        </div>
-   
+
         <div class="name">
           <div class="name-item">
-            <input type="text" name="zip_code" placeholder="Zip Code">
+            <input id="business_arena" type="text" name="business_arena" placeholder="Business Arena">
+            <span id="business_arena_error" class="error-message"></span>
           </div>
           <div class="name-item">
-            <input type="text" name="place" placeholder="Place">
+            <select id="employees" name="employees">
+              <option value="" disabled selected>Employees</option>
+              <option value="1-10">1-10</option>
+              <option value="11-50">11-50</option>
+              <option value="51-200">51-200</option>
+            </select>
+            <span id="employees_error" class="error-message"></span>
           </div>
         </div>
-       
+      </div>
+
+      <div class="CD">
+        <h3>Contact Details</h3>
+        <div class="position">
+          <input id="street" type="text" name="street" placeholder="Street + Nr">
+          <span id="street_error" class="error-message"></span>
+        </div>
+        <div class="position">
+          <input id="additional_info" type="text" name="additional_info" placeholder="Additional Information">
+          <span id="additional_info_error" class="error-message"></span>
+        </div>
+
+        <div class="name">
+          <div class="name-item">
+            <input id="zip_code" type="text" name="zip_code" placeholder="Zip Code">
+            <span id="zip_code_error" class="error-message"></span>
+          </div>
+          <div class="name-item">
+            <input id="place" type="text" name="place" placeholder="Place">
+            <span id="place_error" class="error-message"></span>
+          </div>
+        </div>
+
         <div class="country">
-          <select>
+          <select id="country" name="country">
             <option value="" disabled selected>Country</option>
             <option value="us">United States</option>
             <option value="id">India</option>
           </select>
+          <span id="country_error" class="error-message"></span>
         </div>
-    
+
         <div class="name">
           <div class="name-item">
-            <input type="text" name="code" placeholder="Code +">
+            <input id="code" type="text" name="code" placeholder="Code +">
+            <span id="code_error" class="error-message"></span>
           </div>
           <div class="name-item">
-            <input type="text" name="phone" placeholder="Phone Number">
+            <input id="phone" type="text" name="phone" placeholder="Phone Number">
+            <span id="phone_error" class="error-message"></span>
           </div>
         </div>
+
         <div class="position">
-          <input type="email" name="email" placeholder="Your Email">
+          <input id="email" type="email" name="email" placeholder="Your Email">
+          <span id="email_error" class="error-message"></span>
         </div>
         <div class="terms">
           <input type="checkbox" name="terms" id="terms">
           <label for="terms">I do accept the <a href="#">Terms and Conditions</a></label>
+          <span id="terms_error" class="error-message"></span>
         </div>
         <div class="submit">
           <button type="submit">Register Badge</button>
         </div>
-      </form>
-    </div>
+        <div id="successMessage" class="success-message" >
+          Submission Successful!
+        </div>
+      </div>
+    </form>
   </div>
+  <script src="script.js"></script>
 </body>
 </html>

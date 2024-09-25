@@ -1,14 +1,18 @@
 body {
-  height: 100vh; /* Ensure the gradient covers the full viewport height */
-  margin: 0;
+  height: 100vh; 
   background: linear-gradient(135deg, #92c3e8 30%, #5098e6 100%);
-  font-family: sans-serif;
+  font-family: Arial;
 }
-
 
 .info {
   display: flex;
   justify-content: center;
+}
+
+.registration-form {
+  display: flex;
+  justify-content: space-between;
+  width: 800px; /* Adjust width as needed */
 }
 
 .GI, .CD {
@@ -37,16 +41,13 @@ h3 {
   color: white;
 }
 
-
 select, input {
   width: 100%;
   border: 0;
   border-bottom: 1px solid grey;
   font-size: 20px;
-  font-family: Arial;
   background: transparent;
-  margin-bottom:20px;
-  
+  margin-bottom: 20px;
 }
 
 .GI input::placeholder,
@@ -58,14 +59,11 @@ select, input {
 .CD select::placeholder {
   color: white; 
 }
-  
-  
-
 
 .name {
   display: flex;
   gap: 20px;
-  }
+}
 
 .terms {
   display: flex;
@@ -79,15 +77,12 @@ select, input {
   appearance: none;
   border-radius: 50%; 
   background-color: white;
-  cursor: pointer;
   margin-right: 15px;
-  position: relative;
 }
 
 .terms input[type="checkbox"]:checked {
   background-color: black;
 }
-
 
 .terms a {
   color: white;
@@ -96,6 +91,7 @@ select, input {
 
 .submit {
   text-align: center;
+  margin-top: 20px; 
 }
 
 .submit button {
@@ -110,12 +106,23 @@ select, input {
 .submit button:hover {
   background-color: #ccc;
 }
-.CD option{ 
-  background-color:black;
-  appearance:none;
-  border:none;
-}
-.CD select{
-  color:white;
+
+.CD option { 
+  background-color: blue;
 }
 
+.CD select {
+  color: white;
+}
+.error-message {
+  color: red;
+  margin-top: 5px;
+  display: block;
+}
+
+.success-message {
+  color: green;
+  display:none;
+  font-size: 26px;
+  text-align: center;
+}

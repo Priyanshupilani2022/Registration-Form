@@ -51,7 +51,7 @@ registrationForm.addEventListener('submit', (e) => {
 
     const employees = document.getElementById('employees');
     const employeesError = document.getElementById('employees_error');
-    if (employees.value === "") {
+        if (employees.value === "") {
         valid = false;
         employeesError.innerHTML = "Employees selection is required";
     }
@@ -77,6 +77,26 @@ registrationForm.addEventListener('submit', (e) => {
         valid = false;
         zipCodeError.innerHTML = "Zip Code is required";
     }
+    const place = document.getElementById('place');
+    const placeError = document.getElementById('place_error');
+    if (place.value.trim()=== '') {
+       valid = false;
+	placeError.innerHTML = "Place is required";
+   }
+
+    const country = document.getElementById('country');
+    const countryError = document.getElementById('country_error');
+    if (country.value.trim()=== '') {
+       valid = false;
+	countryError.innerHTML = " select the country";
+ }
+
+    const code = document.getElementById('code');
+    const codeError = document.getElementById('code_error');
+    if (code.value.trim()=== '') {
+       valid = false;
+	codeError.innerHTML = "write country code";
+ }
 
     const phone = document.getElementById('phone');
     const phoneError = document.getElementById('phone_error');
@@ -88,10 +108,16 @@ registrationForm.addEventListener('submit', (e) => {
 
     const email = document.getElementById('email');
     const emailError = document.getElementById('email_error');
-    const emailPattern = /^[^ ]+@[^ ]+\.[a-z]{2,3}$/; 
+    const emailPattern = /^[\w-\.]+@([\w-]+\.)+[\w-]{2,4}$/;
     if (!emailPattern.test(email.value.trim())) {
         valid = false;
         emailError.innerHTML = "Valid Email is required";
+    } else {
+                const tldError = checkTopLevelDomain(email.value.trim());
+        if (tldError) {
+            valid = false;
+            emailError.innerHTML = tldError;
+        }
     }
 
     const terms = document.getElementById('terms');
@@ -108,6 +134,27 @@ registrationForm.addEventListener('submit', (e) => {
 });
 
 function clearErrors() {
-    const errorMessages = document.querySelectorAll('.error-message');
+    const errorMessages = document.querySelectorAll('.error-message, .error_message-cd');
     errorMessages.forEach(error => error.innerHTML = '');
 }
+
+function checkTopLevelDomain(email) {
+ const splitEmail = email.split("@");
+ if (splitEmail.length !== 2) {
+     return "Email must contain exactly one '@' symbol";
+    }
+    const setByDot = splitEmail[1].split(".");
+     if (setByDot.length > 2) {
+        return "Email is invalid, only one dot is allowed after '@'";
+    }
+     else if (setByDot[1].length > 3) {
+        return "Email cannot have more than 3 characters in the top-level domain";
+    }
+
+    return null; 
+}
+
+
+
+       
+

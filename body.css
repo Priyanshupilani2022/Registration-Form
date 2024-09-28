@@ -11,8 +11,7 @@ body {
 
 .registration-form {
   display: flex;
-  justify-content: space-between;
-  width: 800px; /* Adjust width as needed */
+
 }
 
 .GI, .CD {
@@ -116,11 +115,15 @@ select, input {
 }
 .error-message {
   color: red;
-  margin-top: 5px;
   display: block;
 }
 
-.success-message {
+.error_message-cd{
+  color: yellow;
+  display: block;
+}
+
+.success-message{
   color: green;
   display:none;
   font-size: 26px;
